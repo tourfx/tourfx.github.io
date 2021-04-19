@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>TourFX. Измения в версии 2.4</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="../..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">﻿Обновление программы</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Измения в версии 2.4</div>
+<hr />
+
+<h1>Измения в версии 2.4</h1>
+
+<ul>
+<li><a href="#touroperator-payment-dates">Контроль сроков оплат туроператору</a></li>
+<li><a href="#templates">Обновленная форма управления шаблонами документов</a></li>
+<li><a href="#fg-auto-update">Автоматическое обновление финансовых гарантий туроператоров</a></li>
+<li><a href="#client-phone">Номер телефона клиента на форме заявки</a></li>
+<li><a href="#phone-auto-format">Автоформатирование телефонного номера</a></li>
+<li><a href="#full-legal-name">Функция для вывода полного наименования формы собственности</a></li>
+</ul>
+
+<a name="touroperator-payment-dates"></a><h3>Контроль сроков оплат туроператору</h3>
+
+<p>На форме заявке добавлено несколько полей, позволяющих установить сроки оплат туроператору и процент предоплаты.</p>
+
+<p class="centered-image"> <img src="images/touroperator_payment_dates.png" alt="Даты оплат туроператору" /></p>
+
+<p>Даты предоплаты и полной оплаты клиента, выводящиеся в договоре, задаются отдельно.</p>
+
+<p class="centered-image"> <img src="images/client_payment_dates.png" alt="Даты оплат клиента" /></p>
+
+<p>В журнале заявок отображается информация о предстоящих платежах. Красным цветом выделяются оплаты, которые необходимо
+произвести в ближайшие 2 дня.</p>
+
+<p class="centered-image"> <img src="images/touroperator_payment_column.png" alt="Информация о предостоящих оплатах" /></p>
+
+<a name="templates"></a><h3>Обновленная форма управления шаблонами документов</h3>
+
+<p>Форма поменяла вид. Добавилось несколько функций для шаблонов документов заявки, доступных из контекстного меню:
+просмотр стандартного шаблона, отправка шаблона в службу поддержки, вставка разделителя, упорядочивание.</p>
+
+<p class="centered-image"> <img src="images/templates_form.png" alt="Форма управления шаблонами" /></p>
+
+<p>Теперь в качестве шаблона может выступать любой документ Microsoft Word (формат DOCX) или Microsoft Excel (формат XLS).
+(Форматы RTF, DOC и XLSX не поддерживаются!) Достаточно перетащить файл шаблона в список и его можно выводить на печать
+из заявки.</p>
+
+<p class="centered-image"> <img src="images/template_drop.png" alt="Добавление шаблона" /></p>
+
+<p>Можно определить порядок следования шаблонов в меню Печать в заявке, перемещая строки в таблице с помощью мыши.</p>
+
+<a name="fg-auto-update"></a><h3>Автоматическое обновление финансовых гарантий туроператоров</h3>
+
+<p>Программа еженедельно автоматически синхронизирует с реестром туроператоров информацию о финансовых гарантиях.</p>
+
+<a name="client-phone"></a><h3>Номер телефона клиента на форме заявки</h3>
+
+<p>Телефон клиента теперь показывается прямо на форме заявки.</p>
+
+<p class="centered-image"> <img src="images/client_phone.png" alt="Телефон клиента в заявке" /></p>
+
+<a name="phone-auto-format"></a><h3>Автоформатирование телефонного номера</h3>
+
+<p>В справочниках клиентов и туристов можно ввести телефонный номер одними цифрами.</p>
+
+<p class="centered-image"> <img src="images/phone_unformatted.png" alt="Введенный телефонный номер" /></p>
+
+<p>При переходе в другое поле или сохранении формы номер будет автоматически отформатирован.</p>
+
+<p class="centered-image"> <img src="images/phone_formatted.png" alt="Отформатированный телефонный номер" /></p>
+
+<a name="full-legal-name"></a><h3>Функция для вывода полного наименования формы собственности</h3>
+
+<p>Добавлена функция <strong>ПолноеНаименование()</strong> для использования в шаблонах. Например, если в справочнике реквизитов
+наименование фирмы введено как <em>ООО "Ромашка"</em>, в документах можно вывести <em>Общество с ограниченной отвественностью "Ромашка"</em>
+с помощью тега <strong>[ПолноеНаименование(Фирма)]</strong>.</p>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8%202.4">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

@@ -1,0 +1,205 @@
+<html>
+<head>
+<title>TourFX. Работа с заявками</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Работа с заявками</div>
+<hr />
+
+<h1>Работа с заявками</h1>
+
+<p>Документ "Заявка" является основным документом программы. Он содержит всю информацию о заказанном туре:</p>
+
+<ul>
+<li>даты тура,</li>
+<li>страну,</li>
+<li>данные туристов,</li>
+<li>услуги, входящие в тур,</li>
+<li>стоимость,</li>
+<li>информацию об оплатах.</li>
+</ul>
+
+<p>В следующих разделах описывается работа с заявками:</p>
+
+<ul>
+<li><a href="#catalog">Журнал заявок</a></li>
+<li><a href="#add">Создание заявки</a></li>
+<li><a href="#client">Клиент</a></li>
+<li><a href="#corporate-client">Клиент-юрлицо</a></li>
+<li><a href="tourists/#add">Добавление туристов</a></li>
+<li><a href="tourists/#import">Импорт данных туристов</a></li>
+<li><a href="tourists/#edit">Изменение данных туристов</a></li>
+<li><a href="tourists/#remove">Удаление туристов</a></li>
+<li><a href="services">Услуги</a></li>
+<li><a href="costs">Стоимость тура</a></li>
+<li><a href="client-payments">Регистрация оплат клиентов</a></li>
+<li><a href="suppliers-invoice">Регистрация счетов от туроператоров</a></li>
+<li><a href="touroperator-payments">Оплаты туроператорам</a></li>
+<li><a href="print">Печать договоров, заявки на бронирование</a></li>
+<li><a href="booking">Отправка заявки на бронирование по e-mail</a></li>
+<li><a href="#clone">Создание копии заявки</a></li>
+</ul>
+
+<a name="catalog"></a><h2 class="related">Журнал заявок</h2>
+
+<p><em>Главное меню &nbsp;&rarr;&nbsp; Документы &nbsp;&rarr;&nbsp; Заявки</em></p>
+
+<p>Данная форма открывается при запуске программы. В журнале заявок отображается список заказов клиентов.
+По умолчанию показываются только текущие заявки (имеющие состояние "В работе").</p>
+
+<p class="centered-image"> <img src="images/order_catalog.png" alt="Журнал заявок" /></p>
+
+<p>В таблице отображается следующая информация:</p>
+
+<ul>
+<li>"Номер" - <em>номер заявки (по умолчанию номера заявкам присваиваются автоматически, начиная с 1);</em></li>
+<li>"Клиент" - <em>фамилия и имя клиента, заказывающего тур;</em></li>
+<li>"Страна" - <em>направление тура;</em></li>
+<li>"Вылет" - <em>дата начала тура;</em></li>
+<li>"Ночи" - <em>количество ночей;</em></li>
+<li>"1-й турист" - <em>фамилия и имя первого туриста;</em></li>
+<li>"Стоимость" - <em>стоимость тура для туриста;</em></li>
+<li>"Опл." - <em>оплачено клиентом в процентах от стоимости;</em></li>
+<li>"Туроператор" - <em>туроператор, у которого заказывается тур;</em></li>
+<li>"Опл. т/о" - <em>оплачено туроператору в процентах от себестоимости;</em></li>
+<li>"Комментарий" - <em>комментарий к заявке.</em></li>
+</ul>
+
+<p>В журнале заявок производится цветовая индикация определенных событий, связанных с заявкой:</p>
+
+<ul>
+<li>за 2 дня до даты предоплаты ячейка "Опл." (оплачено клиентом) подсвечивается желтым цветом, если
+не было ни одной оплаты от клиента;</li>
+<li>за 1 день до даты предоплаты ячейка "Опл." подсвечивается розовым цветом;</li>
+<li>за 1 день до даты предоплаты ячейка "Опл. т/о" (оплачено туроператору) подсвечивается розовым
+цветом при отсутствии оплат туроператору;</li>
+<li>за 1 день до сдачи документов на визу туроператору подсвечивается ячейка "1-й турист", если документы
+еще не получены от клиента;</li>
+<li><p>в последний день сдачи документов на визу туроператору подсвечивается ячейка "1-й турист", если
+документы не сданы туроператору.</p>
+
+<p class="centered-image"> <img src="images/order_catalog_indications.png" alt="Индикация в журнале заявок" /></p></li>
+</ul>
+
+<a name="add"></a><h2>Создание заявки</h2>
+
+<p>Чтобы создать новую заявку нажмите кнопку "Добавить" в журнале заявок:</p>
+
+<p class="centered-image"> <img src="images/add_order.png" alt="Кнопка "Добавить" в журнале заявок" /></p>
+
+<p>Откроется форма заявки:</p>
+
+<p class="centered-image"> <img src="images/new_order.png" alt="Новая заявка" /></p>
+
+<a name="client"></a><h2>Клиент</h2>
+
+<p>Если клиент ранее уже заказывал тур, его можно добавить в заявку, выбрав из справочника.</p>
+
+<p class="centered-image"> <img src="images/select_customer.gif" alt="Добавление клиента" /></p>
+
+<p>Если это новый клиент, можно сразу открыть новую карточку кнопкой Плюс. При создании записи для нового клиента, показывается подсказка с результатами поиска совпадения первых букв фамилии.</p>
+
+<p class="centered-image"> <img src="images/new_customer.gif" alt="Новый клиент" /></p>
+
+<a name="corporate-client"></a><h2>Клиент-юрлицо</h2>
+
+<p>Если клиентом, для которого оформляется заявка, является компания, необходимо переключить тип клиента, и тогда выбор можно производить из справочника "Компании".</p>
+
+<p class="centered-image"> <img src="images/select_corporate_customer.gif" alt="Выбор клиента-юрлица" /></p>
+
+<p>Если компания делает заказ в первый раз, можно сразу создать ее карточку, нажав кнопку Плюс.</p>
+
+<p class="centered-image"> <img src="images/new_corporate_customer.gif" alt="Новая компания" /></p>
+
+<p>В любой момент из заявки можно открыть карточку компании одной кнопкой.</p>
+
+<p class="centered-image"> <img src="images/edit_corporate_customer.gif" alt="Карточка компании" /></p>
+
+<h2>Туристы</h2>
+
+<ul>
+<li><a href="tourists/#add">Добавление туристов</a></li>
+<li><a href="tourists/#import">Импорт данных туристов</a></li>
+<li><a href="tourists/#edit">Изменение данных туристов</a></li>
+<li><a href="tourists/#remove">Удаление туристов</a></li>
+</ul>
+
+<h2>Услуги</h2>
+
+<ul>
+<li><a href="services">Услуги</a></li>
+<li><a href="services/#add">Добавление услуг</a></li>
+<li><a href="services/#remove">Удаление услуги</a></li>
+</ul>
+
+<h2>Стоимость туров, оплаты</h2>
+
+<ul>
+<li><a href="costs">Стоимость туров, доплаты</a></li>
+<li><a href="client-payments">Регистрация оплат клиентов</a></li>
+<li><a href="touroperator-payments">Оплаты туроператорам</a></li>
+</ul>
+
+<h2>Печать</h2>
+
+<ul>
+<li><a href="print">Печать договоров, заявки на бронирование</a></li>
+<li><a href="booking">Отправка заявки на бронирование по e-mail</a></li>
+</ul>
+
+<a name="clone"></a><h2>Создание копии заявки</h2>
+
+<p>Чтобы создать копию текущей заявки, нажмите кнопку "Действия" и в появившемся меню выберите пункт "Создать копию заявки".
+В новой заявке будет то же содержимое, что и в исходной, кроме списка туристов.</p>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%D0%BC%D0%B8">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

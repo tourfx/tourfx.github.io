@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>TourFX. Установка многопользовательской версии</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="../..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">Установка программы TourFX: Агент</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Установка многопользовательской версии</div>
+<hr />
+
+<h1>Установка многопользовательской версии</h1>
+
+<p>Перед установкой программы проверьте, удовлетворяет ли ваш компьютер <a href="../system-requirements/">системным требованиям</a>
+программы.</p>
+
+<p>Если вы уже работали с однопользовательской версией программой и хотите сохранить все данные при переходе на многопользовательскую версию, воспользуйтесь <a href="../../service/multiuser/">инструкцией</a> по переходу с однопользовательской версии на многопользовательскую.</p>
+
+<ol>
+<li><a href="../../mssql/2008/">Установите</a> Microsoft SQL Server на одном компьютере (самом мощном в офисе).</li>
+<li><a href="#program">Установите</a> программу TourFX на этом же компьютере.</li>
+<li><a href="#db-setup">Создайте</a> базу данных.</li>
+<li><a href="#program">Установите</a> программу TourFX и <a href="#db-conf">настройте</a> соединение с сервером на остальных компьютерах.</li>
+</ol>
+
+<p><br><br></p>
+
+<a name="mssql"></a><h2>Установка Microsoft SQL Server</h2>
+
+<p>Установка и настройка Microsoft SQL Server производится по <a href="../../mssql/2008/">инструкции</a>.</p>
+
+<a name="program"></a><h2>Установка программы TourFX: Агент</h2>
+
+<ol>
+<li><p>Скачайте дистрибутив программы TourFX: Агент <a href="http://209927.selcdn.ru/tourfx/tourfx-agent-2.9.15.4.exe">по ссылке</a> и запустите установочный файл.</p></li>
+<li><p>Появится экран мастера установки программы. Нажмите кнопку "Далее".</p>
+
+<p class="centered-image"> <img src="../images/00_welcome.png" alt="Мастер установки" /></p></li>
+<li><p>На следующем экране будет предложено выбрать папку, в которую будет установлена программа. По умолчанию, установка
+будет произведена в папку C:\TourFX. <strong>Не устанавливайте программу в папку Program Files.</strong></p>
+
+<p class="centered-image"> <img src="../images/02_directory.png" alt="Выбор папки установки" /></p></li>
+<li><p>Начнется процесс установки программы.</p>
+
+<p class="centered-image"> <img src="../images/03_installing.png" alt="Копирование файлов" /></p></li>
+<li><p>Через некоторое время появится экран завершения установки. Нажмите кнопку "Готово".</p>
+
+<p class="centered-image"> <img src="../images/04_done.png" alt="Завершение установки" /></p></li>
+<li><p>Запустится программа и появится окно "Первый запуск".</p>
+
+<p class="centered-image"> <img src="../images/05_first_run.png" alt="Первый запуск" /></p></li>
+<li><p>Выберите многопользовательскую версию.</p>
+
+<p class="centered-image"> <img src="../images/multi-user-version.png" alt="Многопользовательская версия" /></p></li>
+</ol>
+
+<a name="db-setup"></a><h2>Создание базы данных</h2>
+
+<p>Нажмите переключатель "Создание базы данных". Активируются поля "Сервер" и "Пароль SA".</p>
+
+<p class="centered-image"> <img src="../images/create_db_radio.png" alt="Создание базы данных" /></p>
+
+<p>В поле "Сервер" введите имя (или IP-адрес) компьютера, на который установлен SQL-сервер. Имя компьютера можно узнать в "Свойствах системы".</p>
+
+<p class="centered-image"> <img src="../images/computer-name.png" alt="Имя компьютера" /></p>
+
+<p>В поле "Пароль SA" введите пароль, указанный при установке SQL-сервера. Нажмите кнопку "Создать".</p>
+
+<p class="centered-image"> <img src="../images/create_db_filled.png" alt="Заполненные поля" /></p>
+
+<p>Дождитесь, пока программа создаст все необходимые базы данных на сервере.</p>
+
+<p class="centered-image"> <img src="../images/creating-db.png" alt="Создание базы данных..." /></p>
+
+<p>По завершении установки программа запустится под пользователем "Администратор".
+Вы можете добавить любое количество пользователей в <a href="../../catalog/users">справочнике "Пользователи"</a>.</p>
+
+<p>На компьютерах пользователей необходимо <a href="#program">установить программу</a> и <a href="#db-conf">настроить соединение</a> с базой данных.</p>
+
+<a name="db-conf"></a><h2>Настройка соединения с базой данных</h2>
+
+<p>При установке программы на компьютер пользователя для многопользовательской версии
+необходимо настроить параметры соединения с базой данных.</p>
+
+<p>Выберите на форме "Первого запуска" режим работы "Многопользовательская версия".</p>
+
+<p class="centered-image"> <img src="../images/multi-user-version.png" alt="Многопользовательская версия" /></p>
+
+<p>На следующем экране в поле "Сервер" введите имя компьютера, на котором установлен
+SQL-сервер. Нажмите кнопку "Подключиться".</p>
+
+<p class="centered-image"> <img src="../images/db-conf.png" alt="Подключение к базе данных" /></p>
+
+<p>Откроется окно "Входа в систему".</p>
+
+<p class="centered-image"> <img src="../images/login-form.png" alt="Вход в программу" /></p>
+
+<p>В случае возникновения проблем с подключением попробуйте выполнить следующие действия:</p>
+
+<ol>
+<li>Отключите брандмауэр Windows на компьютере, где установлен Microsoft SQL Server. Брандмауэр может блокировать входящие соединения. Обратите внимание, что даже если вы вручную выключили брандмауэр, некоторые программы могут его самостоятельно без вашего участия включить, и программа "TourFX: Агент" опять не сможет подключиться к базе данных. Если отключение решает проблему, можно добавить правило, разрешающее входящие соединения на порт 1433 (порт Microsoft SQL Server), и включить обратно брандмауэр.</li>
+<li>Временно отключите антивируc.</li>
+<li>Удалите Microsoft SQL Server, а затем установите и настройте его заново, очень внимательно следуя инструкции. Неправильное или неточное выполнение любого из шагов установки или настройки SQL-сервера приводят к проблеме с подключением программы к базе данных.</li>
+</ol>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B9%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /agent/doc/mssql/
+Disallow: /agent/doc/mssql/2008/

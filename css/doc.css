@@ -1,0 +1,181 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    font-size: 1em;
+	font-family: "PT Serif",Georgia,Times,"Times New Roman",serif;
+    background-color: #f2f2f2;
+    color: #222;
+    line-height: 1.5em;
+    vertical-align: baseline;
+}
+
+.content {
+    padding: 20px 20px 20px 30px;
+    margin: 0 auto;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+    .content {
+        width: 320px;
+        padding: 5px;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+    .content {
+        width: 480px;
+        padding: 10px 10px 10px 20px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .content {
+        width: 768px;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .content {
+        width: 960px;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    .content {
+        width: 960px;
+    }
+}
+
+p img {
+    /*border: 2px solid red;*/
+    padding: 0 3px;
+}
+
+a {
+    color: #2e3192;
+}
+
+a:hover {
+    color: #00adef;
+}
+
+a:focus {
+	outline: 1px dotted;
+}
+
+hr {
+	border: 0 #ccc solid;
+	border-top-width: 1px;
+	clear: both;
+	height: 0;
+}
+
+/* `Headings
+----------------------------------------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizelegibility;
+    margin-bottom: 1em;
+    font-weight: bold
+}
+
+h1 {
+    font-size: 1.7em;
+    margin-top: 1.5em;
+}
+
+h2 {
+	font-size: 1.5em;
+    margin-top: 2em;
+}
+
+h3 {
+	font-size: 1.3em;
+    margin-top: 1.5em;
+}
+
+h4 {
+	font-size: 1.1em;
+    margin-top: 1.3em;
+    margin-bottom: 0.6em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+/* `Spacing
+----------------------------------------------------------------------------------------------------*/
+p, blockquote, ul, ol {
+    margin-bottom: 0.6em
+}
+
+ul li ul {
+    margin-bottom: 0;
+}
+
+ol {
+	list-style: decimal;
+}
+
+ul {
+	list-style: disc;
+}
+
+li {
+	margin-left: 1.3em;
+    line-height: 1.6em;
+}
+
+.centered-image {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.dt {
+    margin-bottom: 10px;
+}
+
+.dd {
+    margin-bottom: 30px; 
+}
+
+pre {
+    margin-bottom: 30px;
+}
+
+.related {
+    margin-bottom: 4px;
+}
+
+h5 {
+    margin-bottom: 4px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb-separator {
+    color: #999;
+}
+
+.explanation {
+    color: #888;
+}
+
+code {
+    font-size: 1.2em;
+    background-color: #e4e4e4;
+    padding: 2px 4px 2px 4px;
+}

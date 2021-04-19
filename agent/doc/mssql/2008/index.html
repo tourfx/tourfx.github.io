@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>TourFX. Установка Microsoft SQL Server 2008 Express Edition</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="../..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">Установка Microsoft SQL Server</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Установка Microsoft SQL Server 2008 Express Edition</div>
+<hr />
+
+<h1>Установка Microsoft SQL Server 2008 Express Edition</h1>
+
+<ol>
+<li><p>Скачайте <a href="http://www.microsoft.com/ru-ru/download/details.aspx?id=30438">Microsoft SQL Server 2008 Express Edition</a>. На странице загрузке после нажатия на красную кнопку Скачать появится список файлов. Нужно выбрать файл с именем <strong>SQLEXPRWT_x64_RUS.exe</strong>, если у вас 64-битная версия Windows, или файл <strong>SQLEXPRWT_x86_RUS.exe</strong>, если 32-битная.</p></li>
+<li><p>Запустите скаченный файл. Для установки Microsoft SQL Server вы должны обладать правами администратора операционной системы.
+На первом экране выберите первый пункт &ndash; "Новая установка или добавление компонентов к существующей установке"</p>
+
+<p class="centered-image"> <img src="images/01-start.png" alt="Новая установка" /></p></li>
+<li><p>Появится экран с условиями лицензии:</p>
+
+<p class="centered-image"> <img src="images/02-license.png" alt="Лицензия" /></p>
+
+<p>Для продолжения установки необходимо принять условия лицензионного соглашения и нажать кнопку "Далее".</p></li>
+<li><p>На экране выбора компонентов снимите флаг с пункта "Репликация SQL Server" и нажмите "Далее".</p>
+
+<p class="centered-image"> <img src="images/03-components.png" alt="Выбор компонентов" /></p></li>
+<li><p>На следующем экране выберите первый пункт "Экземпляр по умолчанию":</p>
+
+<p class="centered-image"> <img src="images/04-instance.png" alt="Настройка экземпляра" /></p></li>
+<li><p>На экране "Конфигурация сервера" выберите значение "Авто" в колонке "Тип запуска" для службы "Браузер SQL Server":</p>
+
+<p class="centered-image"> <img src="images/05-browser.png" alt="Конфигурация сервера" /></p></li>
+<li><p>Выберите пункт "Смешанный режим" и введите пароль sa (системного администратора):</p>
+
+<p class="centered-image"> <img src="images/06-sa.png" alt="Режим проверки подлинности" /></p>
+
+<p><strong>Запомните введенный пароль. Он понадобится вам при создании базы данных и для обслуживания базы данных.</strong>  </p></li>
+<li><p>На экране выбора параметров отчетов об ошибках нажмите кнопку "Далее":</p>
+
+<p class="centered-image"> <img src="images/07-report-errors.png" alt="Параметры отчетов об ошибках и использовании" /></p></li>
+<li><p>Начнется процесс установки:</p>
+
+<p class="centered-image"> <img src="images/08-installing.png" alt="Ход выполнения установки" /></p></li>
+<li><p>На следующем экране появится сообщение о завершении установки:</p>
+
+<p class="centered-image"> <img src="images/09-finished.png" alt="Завершение установки" /></p>
+
+<p>Нажмите кнопку "Закрыть".</p></li>
+</ol>
+
+<a name="configure"></a><h2>Настройка Microsoft SQL Server 2008</h2>
+
+<p>После завершения установки "Microsoft SQL Server 2008 Express Edition" необходимо выполнить следующие действия для
+настройки установленного SQL-сервера:</p>
+
+<ol>
+<li><p>Запустите "Диспетчер конфигурации SQL Server" ("Пуск" &nbsp;&rarr;&nbsp; "Все программы" &nbsp;&rarr;&nbsp; "Microsoft SQL Server 2008 R2" &nbsp;&rarr;&nbsp;
+"Средства настройки" &nbsp;&rarr;&nbsp; "Диспетчер конфигурации SQL Server"):</p></li>
+<li><p>В левой части экрана разверните пункт "Сетевая конфигурация SQL Server" и выберите его подпункт "Протоколы для
+MSSQLSERVER". В правой части экрана выберите пункт "TCP/IP", и, нажав правой кнопкой, выберите в появившемся меню пункт
+"Включить".</p>
+
+<p class="centered-image"> <img src="images/10-tcpip.png" alt="Включение протокола TCP/IP" /></p></li>
+<li><p>В левой части экрана выберите пункт "Службы SQL Server". В правой части экрана выберите пункт SQL Server
+(MSSQLSERVER), и, нажав правой кнопкой, выберите в появившемся меню пункт "Перезапустить".</p>
+
+<p class="centered-image"> <img src="images/11-restart.png" alt="Перезапуск службы SQL Server" /></p></li>
+</ol>
+
+<p>Настройка Microsoft SQL Server 2008 завершена.</p>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20Microsoft%20SQL%20Server%202008%20Express%20Edition">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

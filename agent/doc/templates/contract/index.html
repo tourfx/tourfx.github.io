@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>TourFX. Шаблон договора</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="../..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">Изменение шаблонов договоров и отчетов</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Шаблон договора</div>
+<hr />
+
+<h1>Шаблон договора</h1>
+
+<p>Шаблон представляет собой произвольный документ в формате Microsoft Word 2007 (DOCX), в котором с помощью тегов
+отмечены места, в которые подставляются значения. Пример простого тега: <strong>[НачалоТура]</strong>. В процессе создания
+печатной формы Договора вместо данного тега будет выведена дата начала тура - "24 апреля 2014 г.".</p>
+
+<p>Для договора определен свой <a href="../tags/contract">набор тегов</a>, который можно использовать в шаблоне. Для каждой таблицы
+документа "Заявка" можно использовать только заданные для этой таблицы теги. Например, внутри таблицы Отели определены теги
+[C], [По], [Отель], [ТипПитания], [Размещение].</p>
+
+<a name="tables"></a><h4>Таблицы</h4>
+
+<p>Перед таблицей в шаблоне необходимо указать, какие данные будут выводиться (источник):</p>
+
+<pre><code>[Таблица источник=Отели]
+</code></pre>
+
+<p>Дополнительно можно также определить количество строк в заголовке и в итогах. По умолчанию считается, что в таблице
+заголовок состоит из одной строки и нет строки итогов.</p>
+
+<pre><code>[Таблица источник=Доплаты заголовок=1 итоги=1]
+</code></pre>
+
+<a name="fragments"></a><h4>Фрагменты</h4>
+
+<p>Табличные данные можно выводить внутри текста с помощью специальной синтаксической конструкции - <em>фрагмента</em>. Пример
+фрагмента для перечисления через запятую имен и фамилий туристов с датой рождения в скобках.</p>
+
+<pre><code>Список туристов: &lt;&lt;#{Туристы}|, |[ФамилияИмя] ([ДатаРождения])&gt;&gt;
+</code></pre>
+
+<p>Фрагмент начинается символами <strong>&lt;&lt;</strong>, затем следует символ <strong>#</strong>, определяющий тип фрагмента, внутри фигурных скобок
+указывается название таблицы, далее между двумя символами <strong>|</strong> задается разделитель. В качестве разделителя может
+выступать любой текст, для перевода строки можно использовать пару символов <em>\n</em>. На этом заканчивается определение
+фрагмента и начинается содержательная часть, в которой можно использовать теги, определенные для таблицы.
+Заканчивается фрагмент символами <strong>>></strong>.</p>
+
+<p>Тип фрагмента задается одним из трех символов: <em>#</em>, <em>?</em> и <em>!</em></p>
+
+<ul>
+<li><strong>#</strong> - содержимое фрагмента вычисляется и выводится для всех строк таблицы,</li>
+<li><strong>?</strong> - содержимое фрагмента вычисляется и выводится только для первой строки таблицы, если таблица не пустая,</li>
+<li><strong>!</strong> - содержимое фрагмента выводится только если таблица пустая.</li>
+</ul>
+
+<p>Например, вывести информацию о первом туристе можно с помощью следующего фрагмента:</p>
+
+<pre><code>&lt;&lt;?{Туристы}[ФамилияИмя][Паспорт ? ", паспорт " + Паспорт][ДатаРождения ? ", дата рождения " + ДатаРождения]&gt;&gt;
+</code></pre>
+
+<p>Информацию о визовой поддержке можно вывести следующим образом:</p>
+
+<pre><code>Визовая поддержка&lt;&lt;!{Визы} не предоставляется&gt;&gt;.
+</code></pre>
+
+<p>С помощью фрагментов (типов ? и !) можно также выводить текст, если выполняется некоторое условие. Например, первый
+параграф с информацией о предоплате выводится только в том случае, если заполнено поле Предоплата в заявке, в
+противном случае выводится второй параграф:</p>
+
+<pre><code>&lt;&lt;?{СуммаПредоплаты}Необходимо внести предоплату в размере [СуммаПредоплаты] до [ДатаПредоплаты].&gt;&gt;
+&lt;&lt;!{СуммаПредоплаты}Оплата в размере 100% от стоимости тура должна быть внесена до [ДатаОплаты].&gt;&gt;
+</code></pre>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

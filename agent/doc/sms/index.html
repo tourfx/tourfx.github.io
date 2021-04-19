@@ -1,0 +1,221 @@
+<html>
+<head>
+<title>TourFX. Отправка SMS-сообщений</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Отправка SMS-сообщений</div>
+<hr />
+
+<h1>Отправка SMS-сообщений</h1>
+
+<ul>
+<li><a href="#templates">Шаблоны SMS-сообщений</a></li>
+<li><a href="#gateways">Настройка подключения к SMS-шлюзу</a></li>
+<li><a href="#mailing">Отправка SMS по списку рассылки</a></li>
+</ul>
+
+<p>Программа позволяет отправлять клиентам различные типы SMS-сообщений. В зависимости от контекста это могут быть поздравление с Днем рождения, напоминания о сроке оплаты, рассылка о "горящих" турах и т.д.</p>
+
+<p>Программа отправляет SMS-сообщения через SMS-шлюз. Стоимость отправки SMS-сообщений определяется SMS-шлюзом. Отправка производится по безопасным каналам с гарантированной доставкой. В настоящий момент поддерживаются следующие SMS-шлюзы:</p>
+
+<ul>
+<li><a href="https://tourfx.sms.ru/">SMS.ru</a> <span style="font-size: 80%">(<em><a href="https://tourfx.sms.ru/?panel=price">Цены</a></em>, <em><a href="https://tourfx.sms.ru/?panel=my">Личный кабинет</a></em>)</span></li>
+<li><a href="https://smsc.ru/?pp442409">SMSС.ru</a> <span style="font-size: 80%">(<em><a href="http://smsc.ru/tariffs/?pp442409">Цены</a></em>, <em><a href="http://smsc.ru/user/?pp442409">Личный кабинет</a></em>)</span></li>
+<li><a href="http://smsaero.ru">SMSAero.ru</a> <span style="font-size: 80%">(<em><a href="https://smsaero.ru/buy/">Цены</a></em>, <em><a href="https://smsaero.ru/cabinet/sendings/">Личный кабинет</a></em>)</span></li>
+</ul>
+
+<a name="templates"></a><h2>Шаблоны SMS-сообщений</h2>
+
+<p>Для формирования SMS-сообщения могут использоваться предопределенные шаблоны. Шаблон представляет собой текст, в котором, с помощью тегов и сегментов (как в шаблонах документов), указываются части текста, которые будут заменены значениями данных клиента и/или заявки. Например, во всех SMS-шаблонах может использоваться тег [Клиент.ИмяОтчество], который при формировании SMS-сообщения из шаблона будет заменен фамилией и именем клиента, которому отправляется сообщение.</p>
+
+<p>Шаблоны может добавлять и редактировать Администратор программы с помощью формы "Шаблоны SMS", находящейся в меню "Настройки".</p>
+
+<p>Каждый шаблон определен в одном из двух контекстов (Клиент или Заявка) и имеет один из следующих типов:</p>
+
+<ul>
+<li>Напоминание,</li>
+<li>Информационное сообщение,</li>
+<li>Поздравление,</li>
+<li>Рассылка.</li>
+</ul>
+
+<p>Контекст "Заявка" означает, что данный шаблон может использоваться только для SMS-сообщений, связанных с конкретной заявкой. В контексте "Заявка" доступны дополнительные теги для вывода информации о заявке.</p>
+
+<p>Шаблоны с типом "Рассылка" используется при создании рассылки для клиентов из Списка рассылки.</p>
+
+<p class="centered-image"> <img src="images/sms_templates_form.png" alt="Форма шаблонов SMS" /></p>
+
+<p>В первой колонке расположен фильтр по типу и контексту шаблонов. Во второй колонке - список шаблонов. В правой части - область редактирования шаблона и предпросмотра. Список тегов для использования в шаблонах расположен под областью редактирования. При нажатии на кнопку тега он добавляется в поле редактирования.</p>
+
+<p>В шаблоне сообщения можно использовать специальный тег <strong>[Подпись]</strong>. При формировании сообщения он будет заменяться текстом, определяемом специальным шаблоном Подпись. Редактируется этот шаблон с помощью формы, открываемой по кнопке Подпись.</p>
+
+<p class="centered-image"> <img src="images/signature_button.png" alt="Кнопка Подпись" /></p>
+
+<p>В тексте шаблона Подпись могут использоваться любые теги для SMS-шаблонов.</p>
+
+<p class="centered-image"> <img src="images/signature_editor.png" alt="Изменение подписи" /></p>
+
+<p>Как и в шаблонах печатных форм, возможности системы не ограничены лишь простой подстановкой значений на месте тегов. Можно использовать <a href="../templates/operators">операторы</a>, <a href="../templates/functions">функции</a> внутри квадратных скобок и фрагменты.</p>
+
+<p>Примеры использования операторов:</p>
+
+<h4>Оператор +</h4>
+
+<p>Оператор <strong>+</strong> соединяет 2 строки. Например:</p>
+
+<pre><code>["Дополнительная информация будет отправлена на " + Клиент.Email]
+</code></pre>
+
+<p>Здесь мы соединяем строку и значение тега Клиент.Email.
+Если в карточке клиента, которому мы отправляем SMS указан e-mail <strong>ivanov@mail.ru</strong>, то данное выражение будет преобразовано в строку:</p>
+
+<pre><code>Дополнительная информация будет отправлена на ivanov@mail.ru
+</code></pre>
+
+<h4>Оператор +?</h4>
+
+<p>Оператор <strong>+?</strong> соединяет 2 строки, если вторая строка не пустая. Когда это может понадобиться? В предыдущем примере в случае отсутствия e-mail в карточке клиента результатом будет строка:</p>
+
+<pre><code>Дополнительная информация будет отправлена на
+</code></pre>
+
+<p>Что выглядит не очень красиво. При использовании оператора <strong>+?</strong> вместо <strong>+</strong> в случае отсутствия e-mail выводится ничего не будет.</p>
+
+<h4>Оператор ?</h4>
+
+<p>Оператор проверки условия <strong>?</strong> может использоваться, когда нужно производить вывод только при истинности выражения.</p>
+
+<p>Например, тег [Клиент.ИмяОтчество] будет иметь непустое значение, состоящие из имени и отчества клиента, только если в карточке указано полное ФИО. Для клиента с полным именем "Иванов Петр Федорович" данный тег будет возвращать "Петр Федорович", а вот для "Иванов Петр" уже будет пустая строка.</p>
+
+<p>Если мы начинаем наше сообщение:</p>
+
+<pre><code>Ув. [Клиент.ИмяОтчество]!
+</code></pre>
+
+<p>В случае клиента с ФИО "Иванов Петр" будет выведено:</p>
+
+<pre><code>Ув. !
+</code></pre>
+
+<p>Воспользуемся оператором <strong>?</strong>:</p>
+
+<pre><code>[Клиент.ИмяОтчество ? "Ув. " + Клиент.ИмяОтчество : "Уважаемый клиент!"]
+</code></pre>
+
+<p>Проверяем возможность обращения по имени-отчеству, и в случае отсутствия полного ФИО выводит строку "Уважаемый клиент!".</p>
+
+<a name="fragments"></a><h4>Фрагменты</h4>
+
+<p>Фрагменты позволяют выводить текст в зависимости от выполнения условия.</p>
+
+<p>Фрагмент начинается символами <strong>&lt;&lt;</strong>, затем следует символ <strong>?</strong> или <strong>!</strong>, определяющий тип фрагмента, внутри фигурных скобок указывается условие, при выполнения которого содержимое фрагмента будет выведено (для типа фрагмента ?) или не выведено (для типа !). Далее идет содержательная часть, в которой можно использовать теги, определенные в контексте использования шаблона. Заканчивается фрагмент символами <strong>>></strong>.</p>
+
+<p>Тип фрагмента задается одним из символов: <em>?</em> и <em>!</em></p>
+
+<ul>
+<li><strong>?</strong> - содержимое фрагмента вычисляется и выводится только при выполнении условия в фигурных скобках,</li>
+<li><strong>!</strong> - содержимое фрагмента выводится, наоборот, только если условие не выполнено.</li>
+</ul>
+
+<p>Например, если мы хотим начать SMS с обращения к клиенту по имени-отчеству, можно использовать следующий фрагмент:</p>
+
+<pre><code>&lt;&lt;?{Клиент.ИмяОтчество}[Ув] [Клиент.ИмяОтчество]!&gt;&gt;
+</code></pre>
+
+<p>Проверяем, что для клиента указано имя и отчество (условие фрагмента <strong>?{Клиент.ИмяОтчество}</strong>), и формируем строку с обращением (содержание фрагмента <strong>[Ув] [Клиент.ИмяОтчество]!</strong>). Если имя и отчество не указаны в карточке клиента, то в итоговом SMS обращение вставлено не будет.</p>
+
+<a name="gateways"></a><h2>Настройка подключения к SMS-шлюзу</h2>
+
+<p>Для того чтобы отправлять SMS из программы необходимо зарегистрироваться на сайте SMS-шлюза и ввести регистрационные данные в Настройках SMS программы (<em>меню "Настройки", пункт "Настройки SMS"</em>).</p>
+
+<p>Вы можете добавить собственное Имя отправителя (Sender ID) в Личном кабинете на сайте SMS-шлюза. Пока Имя отправителя не подтверждено, поле "Sender ID" в настройках шлюза оставьте пустым.  </p>
+
+<h4>SMS.ru</h4>
+
+<p>Зарегистрируйтесь на сайте шлюза SMS.ru по <a href="https://tourfx.sms.ru/?panel=register">этой ссылке</a>.
+В настройках SMS-шлюза программы укажите ключ API, который можно сгенерировать в <a href="http://tourfx.sms.ru/?panel=settings&amp;subpanel=api">Личном кабинете</a>. Запрос Имени отправителя осуществляется на <a href="http://tourfx.sms.ru/?panel=senders">этой странице</a>.</p>
+
+<p class="centered-image"> <img src="images/smsru_settings.png" alt="Настройка SMS.ru" /></p>
+
+<h5>SMSС.ru</h5>
+
+<p>Зарегистрируйтесь на сайте шлюза SMSC.ru по <a href="https://www.smsc.ru/reg/?tt442409">этой ссылке</a>.
+В настройках SMS-шлюза программы укажите Логин и Пароль от <a href="http://smsc.ru/edit/">Личного кабинета</a> сайта SMS-центр. Добавить Имя отправителя можно на <a href="http://smsc.ru/senders/">этой странице</a> Личного кабинета.</p>
+
+<p class="centered-image"> <img src="images/smsc_settings.png" alt="Настройка SMSC.ru" /></p>
+
+<h4>SMSAero.ru</h4>
+
+<p>В настройках SMS-шлюза программы укажите e-mail адрес, использовавшийся для регистрации на сервисе <a href="http://smsaero.ru">SMSAero.ru</a>, и ключ API, который можно сгенерировать в <a href="https://smsaero.ru/cabinet/settings/">Личном кабинете</a>. Запросить Имя отправителя можно на <a href="https://smsaero.ru/cabinet/settings/signs/">этой странице</a> Личного кабинета.</p>
+
+<p class="centered-image"> <img src="images/smsaero_settings.png" alt="Настройка SMSAero.ru" /></p>
+
+<a name="mailing"></a><h2>Отправка SMS по списку рассылки</h2>
+
+<p>Для отправки SMS по списку рассылки откройте справочник "Список рассылки", выберите нужный список рассылки и нажмите кнопку SMS.</p>
+
+<p class="centered-image"> <img src="images/sms_mailing_list.png" alt="Отправка по списку рассылки" /></p>
+
+<p>Откроется форма для составления сообщения. Можно использовать один из шаблонов типа "Рассылка" или составить новое сообщение, используя теги.</p>
+
+<p class="centered-image"> <img src="images/sms_mass_mailing.png" alt="Составление сообщения" /></p>
+
+<p>Кнопка "Отправить" имеет дополнительное меню.</p>
+
+<p class="centered-image"> <img src="images/send_button_split.png" alt="Кнопка Отправить" /></p>
+
+<p>Можно протестировать сообщение, отправив его себе на телефон. Затем отправить сообщение всем адресатам через один из настроенных шлюзов.</p>
+
+<p class="centered-image"> <img src="images/send_button_menu.png" alt="Меню кнопки Отправить" /></p>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0%20SMS-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

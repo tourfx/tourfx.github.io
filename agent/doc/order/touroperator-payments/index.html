@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>TourFX. Оплаты туроператорам</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="../..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">Работа с заявками</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Оплаты туроператорам</div>
+<hr />
+
+<h1>Оплаты туроператорам</h1>
+
+<ul>
+<li><a href="#payment">Расчет суммы оплаты</a></li>
+<li><a href="#pay">Регистрация оплаты</a> (<a href="#cash">нал</a>, <a href="#cashless">безнал</a>)</li>
+<li><a href="#changepayment">Изменение платежей</a></li>
+<li><a href="#repayment">Оформление возврата</a></li>
+</ul>
+
+<p>Чтобы открыть форму оплат туроператору, нажмите кнопку "Оплаты туроператору", расположенную в нижней части формы заявки.</p>
+
+<p class="centered-image"> <img src="images/payments_button.png" alt="Кнопка "Оплаты туроператору"" /></p>
+
+<p>Сверху находится таблица произведенных оплат, под ней - текущий баланс взаиморасчетов. В нижней части
+формы расположены поля, позволяющие рассчитать сумму оплаты, если производится пересчет из евро или
+долларов в рубли.</p>
+
+<p class="centered-image"> <img src="images/empty_touroperator_payments.png" alt="Форма оплат туроператору" /></p>
+
+<a name="payment"></a><h2>Расчет суммы оплаты</h2>
+
+<p>Расчет суммы оплаты туроператору производится аналогично <a href="../client-payments/#payment">расчету суммы оплаты клиента</a>.</p>
+
+<a name="pay"></a><h2>Регистрация оплаты</h2>
+
+<p>Для примера, оплатим туроператору $800 (по курсу 32,1). Активируйте поле "Эквивалент" с помощью радио-кнопки
+и внесите туда сумму 800. В поле "Курс" введите значение 32,1. В поле "Сумма" появится сумма в рублях, которую необходимо
+внести в кассу туроператора. Нажмите кнопку "Оплатить", выбрав форму оплаты (<a href="#cash">наличную</a> или
+<a href="#cashless">безналичную</a>).</p>
+
+<p class="centered-image"> <img src="images/payment.png" alt="Оформление платежа" /></p>
+
+<a name="cash"></a><h3>Наличный платеж</h3>
+
+<p>Если выбрана наличная форма расчета платежа, откроется окно документа "Расход из кассы".
+В поле "Кому" введите фамилию человека, получающего деньги, и нажмите кнопку "Печать"
+для печати расходного кассового ордера.</p>
+
+<p class="centered-image"> <img src="images/rko.png" alt="Расход из кассы" /></p>
+
+<a name="cashless"></a><h3>Безналичный платеж</h3>
+
+<p>Если выбрана безналичная форма расчета платежа, откроется документ "Списание с р/c".</p>
+
+<p class="centered-image"> <img src="images/settlement_account.png" alt="Списание с р/c" /></p>
+
+<p>Нажмите кнопку "Подтверждено" для подтверждения платежа.</p>
+
+<a name="changepayment"></a><h2>Изменение платежей</h2>
+
+<p>В многопользовательской версии, если пользователь имеет роль кассира, он может вносить изменения в платежном документе или аннулировать его.
+Платежные документы открываются двойным кликом мыши по строке таблицы платежей.</p>
+
+<p class="centered-image"> <img src="images/change_payment.png" alt="Изменение платежа" /></p>
+
+<p>Для того чтобы изменить информацию о платеже нажмите кнопку "Изменить".</p>
+
+<p class="centered-image"> <img src="images/change_pko.png" alt="Изменение платежа" /></p>
+
+<p>Появится возможность аннулировать платеж или внести в него изменения.</p>
+
+<p class="centered-image"> <img src="images/delete_payment.png" alt="Аннулирование платежа" /></p>
+
+<a name="repayment"></a><h2>Оформление возврата</h2>
+
+<p>Для того, чтобы оформить возврат нажмите кнопку "Возврат".</p>
+
+<p class="centered-image"> <img src="images/repayment_button.png" alt="Кнопка "Возврат"" /></p>
+
+<p>Введите сумму к возврату или ее эквивалент и нажмите кнопку "Оформить возврат".</p>
+
+<p class="centered-image"> <img src="images/repayment.png" alt="Оформление возврата" /></p>
+
+<p>Оформление возврата происходит аналогично платежам туроператору, только вместо РКО оформляются ПКО, а вместо списания
+с р/с происходит поступление на р/c.</p>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%20%D1%82%D1%83%D1%80%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B0%D0%BC">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>TourFX. Детские лагеря</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<h1>Детские лагеря</h1>
+
+<p>Модуль "Детские лагеря" предназначен для автоматизации продаж в турфирме, реализующей путевки в детские лагеря. В состав
+модуля входят:</p>
+
+<ul>
+<li>справочник "<a href="#camps">Детские лагеря</a>",</li>
+<li>справочник "<a href="#services">Услуги</a>",</li>
+<li>справочник "<a href="#programs">Программы отдыха</a>",</li>
+<li>справочник "<a href="#companies">Компании</a>",</li>
+<li>справочник "<a href="#referers">Рефереры</a>",</li>
+<li><a href="#bookings">списки бронирований</a>,</li>
+<li><a href="#create-order">интеграция с заявками</a>,</li>
+<li><a href="../../agent/doc/order/invoice/">счета</a>,</li>
+<li><a href="#booking-report">отчет по бронированиям</a>,</li>
+<li>отчет по выручке.</li>
+</ul>
+
+<a name="camps"></a><h4>Справочник "Детские лагеря"</h4>
+
+<p>Список всех детских лагерей.</p>
+
+<a name="services"></a><h4>Справочник "Услуги"</h4>
+
+<p>Список дополнительных услуг, которые клиент может заказать при бронировании.</p>
+
+<a name="programs"></a><h4>Справочник "Программы отдыха"</h4>
+
+<p>Справочник содержит параметры предлагаемых программах отдыха: стоимость, даты заездов, кол-во мест, дополнительные услуги.</p>
+
+<p class="centered-image"> <img src="images/program.png" alt="Программа" /></p>
+
+<a name="companies"></a><h4>Справочник "Компании"</h4>
+
+<p>В справочнике хранятся реквизиты агентства для печати договора и выписки счета.</p>
+
+<p class="centered-image"> <img src="images/agent.png" alt="Агентство" /></p>
+
+<a name="referers"></a><h4>Справочник "Рефереры"</h4>
+
+<p>Справочник компаний-посредников, получающих комиссию за приведенных клиентов.</p>
+
+<p class="centered-image"> <img src="images/referer.png" alt="Реферер" /></p>
+
+<a name="bookings"></a><h4>Бронирования</h4>
+
+<p>Списки бронирований мест в заездах.</p>
+
+<p class="centered-image"> <img src="images/bookings.png" alt="Бронирования" /></p>
+
+<p>Добавление нового бронирования:</p>
+
+<p class="centered-image"> <img src="images/new_booking.gif" alt="Новое бронирование" /></p>
+
+<a name="create-order"></a><h4>Создание заявки</h4>
+
+<p>На основе бронирования можно одним нажатием кнопки создать заявку.</p>
+
+<p class="centered-image"> <img src="images/create_order.gif" alt="Создание заявки" /></p>
+
+<a name="booking-report"></a><h4>Отчет по бронированиям</h4>
+
+<p>Данный отчет позволяет сформировать таблицу, состоящую из определенных колонок, с данными, отфильтрованными по различным
+параметрам: заезду, агенту, рефереру, доп. услуге, и экспортировать в Excel.</p>
+
+<p class="centered-image"> <img src="images/booking_report.png" alt="Отчет по бронированиям" /></p>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

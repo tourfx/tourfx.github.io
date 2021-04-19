@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>TourFX. Изменения в версии 2.9.3</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="../..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">﻿Обновление программы</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Изменения в версии 2.9.3</div>
+<hr />
+
+<h1>Изменения в версии 2.9.3</h1>
+
+<ul>
+<li><a href="#hotel-filter">Отбор заявок по отелю</a></li>
+<li><a href="#service-duplicates-removing">Удаление дубликатов в описаниях услуг</a></li>
+<li><a href="#local-multi-user">Несколько пользователей в однопользовательской версии</a></li>
+<li><a href="#new-tags">Новые теги для шаблона договора</a></li>
+</ul>
+
+<a name="hotel-filter"></a><h2>Отбор заявок по отелю</h2>
+
+<p>В журнал заявок добавлена возможность искать заявки по названию отеля.</p>
+
+<p class="centered-image"> <img src="images/hotel_filter.png" alt="Фильтр по отелю" /></p>
+
+<a name="service-duplicates-removing"></a><h2>Удаление дубликатов в описаниях услуг</h2>
+
+<p>Описания услуг представляют собой текстовые данные. Чтобы каждый раз не набирать повторяющиеся названия и описания, в программе предусмотрен выбор из списка ранее введенных. Со временем, в этих списках образуются дублирующиеся элементы, обозначающие одно и то же, но введенные с ошибкой или в разных форматах. Особенно это актуально для многопользовательской версии, где каждый менеджер может по-разному заносить одни и те же названия. Например, один менеджер для описания визы может ввести "Шенген, Испания", другой - "Испания шенген", третий - "шенген Испания".</p>
+
+<p class="centered-image"> <img src="images/service_names.png" alt="Наименования услуг" /></p>
+
+<p>Функция удаления дубликатов позволяет выбрать несколько элементов, обозначающих одно и то же, и оставить только один вариант. Во всех заявках, где ранее использовались удаленные элементы, будет произведена замена на выбранный вариант. </p>
+
+<p class="centered-image"> <img src="images/service_duplicates_removing.gif" alt="Удаление дубликатов" /></p>
+
+<a name="local-multi-user"></a><h2>Несколько пользователей в однопользовательской версии</h2>
+
+<p>В однопользовательской версии добавлена возможность работать нескольким пользователям поочередно. Также, как и в серверной многопользовательской версии, каждый пользователь заходит под своим именем, в журнале заявок отображаются только собственные заявки текущего менеджера, в договоре выводятся данные ведущего менеджера по заявке. Все отчеты можно формировать в разрезе конкретного менеджера.</p>
+
+<p>Опция "Многопользовательский режим" включается на форме "Конфигурация" в меню "Настройки".</p>
+
+<p class="centered-image"> <img src="images/enable_multi_user.png" alt="Многопользовательский режим" /></p>
+
+<a name="new-tags"></a><h2>Новые теги для шаблона договора</h2>
+
+<p>Добавлены несколько тегов для вывода финансовой информации в договоре:</p>
+
+<ul>
+<li>СтоимостьИтогоВВалюте - <em>итоговая стоимость тура в валюте с учетом скидки</em></li>
+<li>ПредоплатаВВалюте - <em>сумма предоплаты в указанной валюте (Предоплата.Валюта)</em></li>
+<li>Предоплата.Валюта - <em>валюта предоплаты</em></li>
+<li>АвансВВалюте - <em>сумма первого платежа в валюте (эквивалента)</em></li>
+<li>Аванс.Валюта - <em>валюта суммы эквивалента, оплаченного аванса</em></li>
+<li>ДоплатаВВалюте - <em>разность сумм СтоимостьИтогоВВалюте и АвансВВалюте</em></li>
+</ul>
+
+<p>[СтоимостьИтогоВВалюте] учитывает только те доплаты, которые имеют ту же валюту, что и основная стоимость тура. [ДоплатаВВалюте] вычисляется только в том случае, если валюта эквивалента в авансовом платеже совпадает с валютой стоимости тура.</p>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8%202.9.3">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

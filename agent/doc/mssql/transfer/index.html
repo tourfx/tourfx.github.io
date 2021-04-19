@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>TourFX. Перенос базы данных Microsoft SQL Server с одного компьютера на другой</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="../..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">Установка Microsoft SQL Server</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Перенос базы данных Microsoft SQL Server с одного компьютера на другой</div>
+<hr />
+
+<h1>Перенос базы данных Microsoft SQL Server с одного компьютера на другой</h1>
+
+<p>Перенос осуществляется в 3 этапа:</p>
+
+<ol>
+<li>Создание резервных копий баз данных программы TourFX на старом сервере.</li>
+<li>Восстановление резервных копий на новом сервере.</li>
+<li>Настройка прав доступа к базам данных на новом сервере.</li>
+</ol>
+
+<h2>Создание резервных копий</h2>
+
+<p>Подключитесь к старому SQL-серверу с помощью программы SQL Management Studio под пользователем SA. Выберите проверку
+подлинности "SQL Server".</p>
+
+<p class="centered-image"> <img src="images/01-login-old.png" alt="Соединение с SQL Server" /></p>
+
+<p>В Обозревателе объектов раскройте список с базами данных.</p>
+
+<p class="centered-image"> <img src="images/02-db-list.png" alt="Список баз данных" /></p>
+
+<p>С помощью контекстного меню, вызываемого нажатием правой кнопки мыши над пунктом tourfx_agent, откройте форму создания резервной копии.</p>
+
+<p class="centered-image"> <img src="images/03-menu-backup.png" alt="Контекстное меню" /></p>
+
+<p>Проверьте, что открывшаяся форма соответствует изображенной на следующем снимке экрана. Нажмите ОК. Файл резервной
+копии будет сохранен в файле tourfx_agent.bak в папке C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\Backup</p>
+
+<p class="centered-image"> <img src="images/04-backup-form.png" alt="Форма создания резервной копии" /></p>
+
+<p>Повторите процедуру для остальных трех баз: tourfx_agent_archive, tourfx_agent_changelog, tourfx_agent_updates.</p>
+
+<h2>Восстановление резервных копий</h2>
+
+<p>Скопируйте файлы резервных копий на новый сервер. Установите Microsoft SQL Server на новом сервере.
+Подключитесь к новому SQL-серверу с помощью программы SQL Management Studio под пользователем SA.
+В Обозревателе объектов с помощью контекстного меню, откройте форму восстановления резервной копии.</p>
+
+<p class="centered-image"> <img src="images/05-menu-restore.png" alt="Пункт восстановления резервной копии" /></p>
+
+<p>В открывшейся форме в поле "В базу данных" введите <strong>tourfx_agent</strong>. Выберите источник <strong>С устройства</strong>, нажмите кнопку
+с тремя точками.</p>
+
+<p class="centered-image"> <img src="images/06-restore-form.png" alt="Форма восстановления резервной копии" /></p>
+
+<p>В открывшемся окне нажмите кнопку Добавить и выберите файл резервной копии tourfx_agent.bak.</p>
+
+<p class="centered-image"> <img src="images/07-select-bak.png" alt="Выбор файла резервной копии" /></p>
+
+<p>В колонке "Восстановить" поставьте галку.</p>
+
+<p class="centered-image"> <img src="images/08-select-restore.png" alt="Флаг Восстановить" /></p>
+
+<p>Нажмите ОК. База данных tourfx_agent восстановится.</p>
+
+<p>Таким же образом восстановите остальные 3 базы. Выбирайте соответствующие файлы bak и в поле "В базу данных" указывайте
+tourfx_agent_archive, tourfx_agent_changelog и tourfx_agent_updates. Например, для базы tourfx_agent_changelog
+форма восстановления будет иметь следующий вид:</p>
+
+<p class="centered-image"> <img src="images/09-restore-changelog.png" alt="Восстановление tourfx_agent_changelog" /></p>
+
+<h2>Настройка прав доступа</h2>
+
+<p>На данном шаге мы определим права доступа к четырем восстановленым базам данных. При резервном копировании в файл
+резервной копии включаются права доступа пользователя tourfx_agent к базам, но этот пользователь ассоциирован с
+Именем входа на старом сервере и не будет работать на новом. Поэтому сначала нужно удалить пользователя tourfx_agent
+из каждой базы.</p>
+
+<p>Раскройте пункт базы данных tourfx_agent и в подпункте Пользователи удалите пользователя tourfx_agent с помощью
+контекстного меню (или просто кнопкой Delete).</p>
+
+<p class="centered-image"> <img src="images/10-delete-user.png" alt="Удаление пользователя" /></p>
+
+<p>Таким же образом раскройте пункты баз данных tourfx_agent_archive, tourfx_agent_changelog и tourfx_agent_updates
+и в них удалите пользователя tourfx_agent.</p>
+
+<p>Добавляем новое Имя входа tourfx_agent и соответствующих пользователей в базы данных, устанавливаем для них права доступа.</p>
+
+<p>Раскройте пункт "Безопасность" и, нажав на подпункте "Имена входа" правой кнопкой мыши, в контекстном меню выберите
+"Создать имя входа...".</p>
+
+<p class="centered-image"> <img src="images/11-create-login.png" alt="Меню создания имени входа" /></p>
+
+<p>В открывшейся форме в поле "Имя входа" введите значение <strong>tourfx_agent</strong>. Выберите "Проверка подлинности SQL Server".
+Снимите галку "Требовать использование политики паролей". Введите пароль в поля "Пароль" и "Подтверждение пароля".
+Выберите базу по умолчанию <strong>tourfx_agent</strong>.</p>
+
+<p class="centered-image"> <img src="images/12-create-login-main.png" alt="Создание имени входа" /></p>
+
+<p>В левом верхнем списке выберите страницу "Сопоставление пользователей". Для каждой из четырех баз поставьте галку в 
+колонке "Схема" и в нижнем списке "Членство в роли базы данных" отметьте галкой значение <strong>db_owner</strong>.</p>
+
+<p class="centered-image"> <img src="images/13-db-owner.png" alt="Сопоставление" /></p>
+
+<p>Обратите внимание, галку db_owner нужно проставить для каждой базы после установки галки в колонке "Схема".</p>
+
+<p>Нажмите ОК. Настройка прав закончена.</p>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%9F%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%20%D0%B1%D0%B0%D0%B7%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20Microsoft%20SQL%20Server%20%D1%81%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0%20%D0%BD%D0%B0%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B9">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

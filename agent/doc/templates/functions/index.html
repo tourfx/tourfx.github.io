@@ -1,0 +1,179 @@
+<html>
+<head>
+<title>TourFX. Встроенные функции шаблонов</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="../..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">Изменение шаблонов договоров и отчетов</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Встроенные функции шаблонов</div>
+<hr />
+
+<a name="functions"></a><h1>Встроенные функции шаблонов</h1>
+
+<p>Во всех шаблонах в форматах Microsoft Word (кроме RTF) и Microsoft Excel возможно использование перечисленных далее
+функций.
+Вызов этих функций аналогичен использованию ключевых слов и представляет собой название функции заключенное в квадратные скобки
+([функция()]). Определены следующие встроенные функции:</p>
+
+<p class="dt"><strong>ФамилияИнициалы(</strong> <em>ФамилияИмяОтчество</em> <strong>)</strong></p>
+
+<p class="dd">Выводит передаваемые в функцию фамилию, имя и отчество, преобразуя имя и отчество в инициалы.</p>
+
+<p class="dt"><strong>ПолноеНаименование(</strong> <em>СокращенноеНаименование</em> <strong>)</strong></p>
+
+<p class="dd">Заменяет сокращенное наименование формы собственности полным.<br>
+<em>ПолноеНаименование("ООО «Ромашка»")</em> &nbsp;&rarr;&nbsp; <strong>Общество с ограниченной ответственностью «Ромашка»</strong></p>
+
+<p class="dt"><strong>МесяцПрописью(</strong> Дата <strong>)</strong></p>
+
+<p class="dd">Выводит дату в формате "ДД МЕСЯЦ ГГГГ г.". <br>
+<em>МесяцПрописью(24.05.12)</em> &nbsp;&rarr;&nbsp; <strong>24 мая 2012 г.</strong></p>
+
+<p class="dt"><strong>гг(</strong> Дата <strong>)</strong></p>
+
+<p class="dd">Выводит дату в формате "ДД.ММ.ГГ". <br>
+<em>гг(24.05.2021)</em> &nbsp;&rarr;&nbsp; <strong>24.05.21</strong></p>
+
+<p class="dt"><strong>год(</strong> Дата <strong>)</strong></p>
+
+<p class="dd">Возвращает год из даты. <br>
+<em>год(сегодня())</em> &nbsp;&rarr;&nbsp; <strong>2019</strong></p>
+
+<p class="dt"><strong>сейчас()</strong></p>
+
+<p class="dd">Выводит текущие дату и время (форматирование задается в свойствах ячейки Excel).</p>
+
+<p class="dt"><strong>сегодня()</strong></p>
+
+<p class="dd">Выводит текущую дату (форматирование задается в свойствах ячейки Excel).</p>
+
+<p class="dt"><strong>ночи(Дата1, Дата2)</strong></p>
+
+<p class="dd">Выводит количество ночей между двумя датами.</p>
+
+<p class="dt"><strong>дни(Дата1, Дата2)</strong></p>
+
+<p class="dd">Выводит количество дней между двумя датами.</p>
+
+<p class="dt"><strong>формат(</strong> <em>Дата</em>, <em>СтрокаФормата</em> <strong>)</strong></p>
+
+<p class="dd">Выводит дату в формате, задаваемом параметром <em>СтрокаФормата</em>. В <em>СтрокеФормата</em> буквосочетания дд, ММ (заглавные!) и гггг определяют позиции для вывода, соответственно, дня, месяца и года.<br>
+<em>формат(сегодня(), "дд.ММ.гггг")</em> &nbsp;&rarr;&nbsp; <strong>23.05.2019</strong></p>
+
+<p class="dt"><strong>формат(</strong> <em>Сумма</em>, <em>КодВалюты</em> <strong>)</strong></p>
+
+<p class="dd">Выводит отформатированное значение суммы ("Сумма") с указанием валюты, определяемой
+трехбуквенным кодом "КодВалюты".<br>
+ <em>формат(12345.74, "RUB")</em> &nbsp;&rarr;&nbsp; <strong>12 345 рублей 74 коп.</strong></p>
+
+<p class="dt"><strong>ФорматСокр(</strong> <em>Сумма</em>, <em>КодВалюты</em> <strong>)</strong></p>
+
+<p class="dd">Выводит отформатированное значение суммы ("Сумма") с указанием валюты, определяемой
+трехбуквенным кодом "КодВалюты".<br>
+ <em>ФорматСокр(12345.74, "RUB")</em> &nbsp;&rarr;&nbsp; <strong>12 345 руб. 74 коп.</strong></p>
+
+<p class="dt"><strong>формат(</strong> <em>Сумма</em>, <em>Точность</em> <strong>)</strong></p>
+
+<p class="dd">Выводит отформатированное значение суммы ("Сумма") с точностью, задаваемой
+параметром "Точность".</p>
+
+<p class="dt"><strong>окр(</strong> <em>Сумма</em> <strong>)</strong></p>
+
+<p class="dd">Округляет сумму до целого числа.</p>
+
+<p class="dt"><strong>окр(</strong> <em>Сумма</em>, <em>Точность</em> <strong>)</strong></p>
+
+<p class="dd">Округляет сумму с количеством знаков после запятой, задаваемым параметром "Точность".</p>
+
+<p class="dt"><strong>ЧислоПрописью(</strong> <em>Число</em>[, "жен"] <strong>)</strong></p>
+
+<p class="dd">Выводит <em>Число</em> прописью. При указании второго опционального параметра ("жен") числительное выводится в женском роде.</p>
+
+<p class="dt"><strong>СуммаПрописью(</strong> <em>Сумма</em>, <em>КодВалюты</em> <strong>)</strong></p>
+
+<p class="dd">Выводит сумму прописью. Код валюты используется для склонения числительных. Название валюты не выводится.</p>
+
+<p class="dt"><strong>СуммаПрописьюСВалютой(</strong> <em>Сумма</em>, <em>КодВалюты</em> <strong>)</strong></p>
+
+<p class="dd">Выводит сумму прописью с указанием валюты.</p>
+
+<p class="dt"><strong>заглавными(</strong> Строка <strong>)</strong></p>
+
+<p class="dd">Заменяет все буквы строки-аргумента строчными (заглавными).<br>
+<em>заглавными("Петров Иван")</em> &nbsp;&rarr;&nbsp; <strong>ПЕТРОВ ИВАН</strong></p>
+
+<h2>Функции только для шаблонов в формате Microsoft Excel</h2>
+
+<p><strong>изображение()</strong>
+<em>Только для шаблонов в формате Excel</em></p>
+
+<p>Данная функция определяет место отображения в отчете встроенного в шаблон изображения. В
+отчетах допускается использование только одного изображения.</p>
+
+<p><strong>сумма(</strong> "<em>Столбец</em>" <strong>)</strong>
+<em>Только для шаблонов в формате Excel</em></p>
+
+<p>Данная функция применяется в итогах таблиц (управляющая конструкция "итоги"). Она выводит в ячейку сумму
+значений в столбце таблицы "Столбец".</p>
+
+<p><strong>количество()</strong>
+<em>Только для шаблонов в формате Excel</em></p>
+
+<p>Данная функция применяется в итогах таблиц (управляющая конструкция "итоги"). Она выводит в ячейку количество
+строк в таблице.</p>
+
+<p><strong>счетчик()</strong>
+<em>Только для шаблонов в формате Excel</em></p>
+
+<p>Данная функция применяется в строках таблиц (управляющая конструкция "строка"). Она выводит в ячейку номер
+строки таблицы.</p>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%92%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%20%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

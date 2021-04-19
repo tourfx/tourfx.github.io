@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>TourFX. Изменения в версии 1.1</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="../..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">﻿Обновление программы</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Изменения в версии 1.1</div>
+<hr />
+
+<h1>Изменения в версии 1.1</h1>
+
+<ul>
+<li><a href="#internal-exchange-rate">Получение внутреннего курса валют туроператоров</a></li>
+<li><a href="#tourist-import">Импорт списка туристов в заявку</a></li>
+<li><a href="#booking-order-mailing">Отправка заявки на бронирование по e-mail</a></li>
+<li><a href="#debt-calc-in-rub">Расчет суммы "К оплате" в рублях</a></li>
+</ul>
+
+<a name="internal-exchange-rate"></a><h2>Получение внутреннего курса валют туроператоров</h2>
+
+<p>Для следующих туроператоров имеется возможность автоматически вносить внутренний
+курс туроператора в заявку:</p>
+
+<ul>
+<li><a href="http://www.itc.travel">ITC</a></li>
+<li><a href="http://www.amigo-tours.ru">Амиго-Турс</a></li>
+<li><a href="http://www.ascent-travel.ru">Ascent Travel</a></li>
+<li><a href="http://www.bgoperator.ru">Библио-глобус</a></li>
+<li><a href="http://vremiatour.ru">Время-тур</a></li>
+<li><a href="http://www.capital-tour.ru">Capital Tour</a></li>
+<li><a href="http://www.dvm-tour.ru">DVM Tour</a></li>
+<li><a href="http://www.mostravel.ru">Mostravel</a></li>
+<li><a href="http://www.natalie-tours.ru">Natalie Tours</a></li>
+<li><a href="http://www.vam-tour.ru">Vam Tour</a></li>
+<li><a href="http://www.mouzenidis-travel.ru">Mousenidis Travel</a></li>
+<li><a href="http://www.pegast.ru">Pegas Touristik</a></li>
+<li><a href="http://www.space-travel.ru">Space Travel</a></li>
+<li><a href="http://teztour.com">Tez Tour</a></li>
+</ul>
+
+<p>В следующем обновлении программы список поддерживаемых туроператоров будет расширен.</p>
+
+<p>Для того чтобы воспользоваться данной функцией, необходимо ввести реестровый номер
+туроператора в справочнике туроператоров.</p>
+
+<p class="centered-image"> <img src="../../catalog/touroperators/images/registry_number.png" alt="Реестровый номер" /></p>
+
+<p>В заявке появится синяя ссылка на слове "Курс". Если ее нажать, появится меню для
+выбора дня действия внутреннего курса (сегодня или завтра).</p>
+
+<p class="centered-image"> <img src="../../order/costs/images/rate_link_button.png" alt="Ссылка "Курс"" /></p>
+
+<p>Выберите нужный день &ndash; начнется загрузка внутреннего курса с сайта туроператора.</p>
+
+<p class="centered-image"> <img src="../../order/costs/images/rate_loading.png" alt="Загрузка внутреннего курса" /></p>
+
+<p>Если загрузка закончилась успешно, в поле "Курс USD" появится значение внутреннего
+курса валюты у данного туроператора на выбранный день.</p>
+
+<p class="centered-image"> <img src="../../order/costs/images/rate_loaded.png" alt="Курс загружен" /></p>
+
+<a name="tourist-import"></a><h2>Импорт списка туристов в заявку</h2>
+
+<p>Данная функция позволяет добавлять данные туристов в заявку, скопировав их в
+буфер обмена из письма, текстового документа, таблицы Excel. Программа распознает
+фамилии и имена туристов, даты рождений, номера, сроки действия паспортов и
+вносит эти данные в таблицу туристов в заявке.</p>
+
+<p>Например, у нас записаны данные туристов в текстовом файле:</p>
+
+<pre><code>Nikulin Alexandr  70 № 2293205  07.07.2013   19.09.1978
+Nikulina Alena    48 № 9234811  28.02.2013   07.10.1984
+</code></pre>
+
+<p>Выделяем их и копируем в буфер обмена. В заявке нажимаем правую
+кнопку мыши на таблице туристов. В появившемся контекстном меню выбираем пункт
+"Вставить".</p>
+
+<p class="centered-image"> <img src="../../order/tourists/images/paste_tourists.png" alt="Кнопка "Вставить"" /></p>
+
+<p>Появится таблица предпросмотра результата распознавания.</p>
+
+<p class="centered-image"> <img src="../../order/tourists/images/tourist_import_preview.png" alt="Предпросмотр импорта туристов" /></p>
+
+<p>В этой таблице можно скорректировать данные туристов, если распознавание прошло
+с ошибками. При нажатии на кнопку "Добавить" информация о туристах будет внесена в
+заявку.</p>
+
+<p>Механизм импорта имеет следующие ограничения:</p>
+
+<ul>
+<li>данные каждого туриста должны находится в различных строках (текстового документа
+или таблицы Excel),</li>
+<li>фамилии и имена туристов должны быть на английском языке,</li>
+<li>даты дней рождений и сроков окончания действия паспортов должны иметь следующие
+форматы: дд.мм.гг, дд.мм.гггг, дд:мм:гг, дд:мм:гггг, дд/мм/гг,
+дд/мм/гггг, 01JUL10, 01JUL2010.</li>
+</ul>
+
+<a name="booking-order-mailing"></a><h2>Отправка заявки на бронирование по e-mail</h2>
+
+<p>С помощью этой функции вы можете создать письмо для бронирования тура.</p>
+
+<p>Нажмите кнопку "Действия" внизу заявки и в появившемся меню выберите пункт
+"Послать заявку на бронирование".</p>
+
+<p class="centered-image"> <img src="../../order/booking/images/actions_button.png" alt="Кнопка "Действия"" /></p>
+
+<p>Откроется форма создания нового письма в вашем почтовом клиенте со вложенным файлом
+"Заявки на бронирование".</p>
+
+<p class="centered-image"> <img src="../../order/booking/images/booking_email.png" alt="Заявка на бронирование" /></p>
+
+<a name="debt-calc-in-rub"></a><h2>Расчет суммы "К оплате" в рублях</h2>
+
+<p>Если стоимость тура определена в иностранной валюте, долг клиента и задолженность перед
+туроператором будут отображаться в этой валюте.</p>
+
+<p class="centered-image"> <img src="../../order/costs/images/debts_in_curr.png" alt="Долг в валюте" /></p>
+
+<p>Кликнув левой кнопкой мыши на сумме "К оплате", эта сумма пересчитается в рублях
+по введенному курсу туроператора.</p>
+
+<p class="centered-image"> <img src="../../order/costs/images/debts_in_rub.png" alt="Долг в рублях" /></p>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8%201.1">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

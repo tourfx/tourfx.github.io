@@ -1,0 +1,218 @@
+<html>
+<head>
+<title>TourFX. Карточка клиента</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta http-equiv="cache-control" content="max-age=86400"/><link rel="stylesheet" media="screen" href="../../../../css/reset.css" />
+<link rel="stylesheet" media="screen" href="../../../../css/doc.css" />
+<link rel="icon" type="image/x-icon" href="../../../../images/favicon.ico" />
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="breadcrumb"><a href="../../../..">TourFX</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="../..">Руководство пользователя</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;<a href="..">CRM</a>&nbsp;&nbsp;<span class="breadcrumb-separator">&gt;</span>&nbsp;&nbsp;Карточка клиента</div>
+<hr />
+
+<h1>Карточка клиента</h1>
+
+<p>Карточка клиента содержит следующие данные:</p>
+
+<ul>
+<li>ФИО клиента,</li>
+<li><a href="#status">статус</a>,</li>
+<li>контактная информация,</li>
+<li>паспортные данные,</li>
+<li><a href="#log">история общения с клиентом</a>,</li>
+<li><a href="#next-contact">следующий контакт</a>,</li>
+<li><a href="#tour-search">подбор тура</a>,</li>
+<li><p>заявки.</p>
+
+<p class="centered-image"> <img src="images/customer_card.png" alt="Карточка клиента" /></p></li>
+</ul>
+
+<a name="status"></a><h2>Этапы работы с клиентом и статусы</h2>
+
+<p>Работа с клиентом разбивается на 4 этапа, в каждом из которых клиенту присваивается определенный статус.</p>
+
+<h4>1 этап. Предпродажная работа</h4>
+
+<p>На данном этапе осуществляется подготовительная работа с клиентом перед заключением договора на бронирование, кроме
+подбора тура, который выделен в отдельный этап.</p>
+
+<p>Статус:</p>
+
+<ul>
+<li>Предпродажная работа <em class="explanation">&ndash; работа по привлечению клиента, предложение услуг клиенту, общение с клиентом перед подбором тура</em></li>
+</ul>
+
+<h4>2 этап. Подбор тура</h4>
+
+<p>На данном этапе клиент уже определился, куда он хочет поехать отдыхать, и менеджер подбирает варианты туров.</p>
+
+<p>Статусы:</p>
+
+<ul>
+<li>Подбор тура <em class="explanation">&ndash; менеджер подбирает тур для клиента</em></li>
+<li>Варианты отправлены <em class="explanation">&ndash; менеджер отправил варианты клиенту и ожидает его решение</em></li>
+<li>Тур выбран <em class="explanation">&ndash; клиент выбрал один из предложенных вариантов, менеджер запланировал встречу с клиентом для заключения договора на бронирование</em></li>
+</ul>
+
+<h4>3 этап. Работа с заявками</h4>
+
+<p>На данном этапе заключается договор с клиентом, бронируется тур и производится остальная работа над заказом. Статусы
+клиента могут меняться системой автоматически при изменении состояния заявки.</p>
+
+<p>Статусы:</p>
+
+<ul>
+<li>Заявка оформлена <em class="explanation">&ndash; менеджер создал заявку на бронирование тура, клиент подписал Договор на обслуживание</em></li>
+<li>Тур забронирован <em class="explanation">&ndash; менеджер забронировал тур, ожидается подтверждение</em></li>
+<li>Тур подтвержден <em class="explanation">&ndash; туроператор подтвердил тур</em></li>
+<li>Отказ туроператора <em class="explanation">&ndash; туроператор не подтвердил тур</em></li>
+<li>Тур оплачен <em class="explanation">&ndash; тур подтвержден туроператором и полностью оплачен клиентом</em></li>
+<li>Документы готовы <em class="explanation">&ndash; документы на тур готовы, можно отдавать их клиенту</em></li>
+<li>Документы выданы <em class="explanation">&ndash; документы на тур переданы клиенту</em></li>
+<li>Тур аннулирован <em class="explanation">&ndash; клиент аннулировал тур</em></li>
+</ul>
+
+<h4>4 этап. Постпродажная работа</h4>
+
+<p>Данный этап начинается после передачи документов на тур клиенту. Мы можем напомнить клиенту о времени вылета, сообщить
+информацию о рейсе, поинтересоваться впечатлениями об отдыхе, запланировать контакт для обсуждения планов на следующий отдых.</p>
+
+<p>Статусы:</p>
+
+<ul>
+<li>Вылет завтра (ночью, утром, днем, вечером) <em class="explanation">&ndash; клиент вылетает завтра (статус устанавливается системой автоматически)</em></li>
+<li>Вылет сегодня (днем, вечером) <em class="explanation">&ndash; клиент вылетает сегодня (статус устанавливается системой автоматически)</em></li>
+<li>На отдыхе <em class="explanation">&ndash; клиент находится на отдыхе (статус устанавливается системой автоматически)</em></li>
+<li>Вернулся с отдыха <em class="explanation">&ndash; статус устанавливается для клиента автоматически на 7 дней после окончания тура, затем переводится в статус Клиент.</em></li>
+</ul>
+
+<a name="inactive"></a><h4>Другие статусы клиентов</h4>
+
+<p>Когда работа над туром завершена, клиенту автоматически присваивается <strong>неактивный</strong> статус “Клиент”. Если клиент отказался
+от услуг, менеджер указывает причину отказа и устанавливает один следующих статусов:</p>
+
+<ul>
+<li>Потенциальный клиент <em class="explanation">&ndash; клиент еще ни разу не забронировал тур, возможны заказы в будущем</em></li>
+<li>Клиент <em class="explanation">&ndash; клиентом был ранее заказан хотя бы один тур</em></li>
+<li>Удален <em class="explanation">&ndash; клиента удаляется из справочника, но информация о работе с ним остается для статистики</em></li>
+<li>В черном списке <em class="explanation">&ndash; менеджер отметил клиента как нежелательного для дальнейшей работы</em></li>
+</ul>
+
+<a name="log"></a><h2>История общения с клиентом</h2>
+
+<p>После общения с клиентом по телефону, по почте или лично можно записать краткое содержание разговора и достигнутые
+договоренности, так чтобы при следующем контакте быстро восстановить итоги прошлых переговоров.</p>
+
+<p>История общения с клиентом расположена на первой закладке “Общение” карточки клиента.</p>
+
+<p class="centered-image"> <img src="images/communication.png" alt="Общение" /></p>
+
+<p>Для добавления новой записи нажмите кнопку “Добавить запись”, выберите тип контакта из списка и заполните поле “Итог
+общения”. Чтобы сохранить введенные данные и добавить еще одну запись, нажмите кнопку “Добавить”.</p>
+
+<p class="centered-image"> <img src="images/add_record.gif" alt="Добавление записи" /></p>
+
+<a name="next-contact"></a><h2>Планирование следующего контакта с клиентом</h2>
+
+<p>Менеджер может создать задачу для напоминания о следующем запланированном контакте с клиентом.</p>
+
+<p class="centered-image"> <img src="images/next_contact.png" alt="Следующий контакт" /></p>
+
+<p>Когда наступит заданное время, программа покажет окно уведомления и выделит задачу красным цветом на экране CRM.</p>
+
+<p class="centered-image"> <img src="images/next_contact_notification.png" alt="Напоминание о следующем контакте" /></p>
+
+<p>Если клиент имеет <a href="#inactive">неактивный</a> статус в момент наступления времени следующего контакта, то ему автоматически
+присваивается системой статус "Предпродажная работа", так что он появляется на <a href="../#screen">экране CRM</a>.</p>
+
+<a name="tour-search"></a><h2>Подбор тура</h2>
+
+<p>На закладке "Подбор тура" менеджер указывает параметры тура для поиска, а также пожелания клиента.</p>
+
+<p class="centered-image"> <img src="images/tour_search.png" alt="Подбор тура" /></p>
+
+<p>Текущий подбор тура может находится в одном из следующих состояний:</p>
+
+<ul>
+<li>Поиск тура <em class="explanation">&ndash; менеджер в процессе поиска тура клиенту</em></li>
+<li>Варианты найдены <em class="explanation">&ndash; подходящие варианты найдены</em></li>
+<li>Варианты не найдены <em class="explanation">&ndash; не найден ни один подходящий тур</em></li>
+<li>Варианты отправлены клиенту <em class="explanation">&ndash; подходящие варианты найдены и отправлены клиенту</em></li>
+<li>Тур выбран <em class="explanation">&ndash; клиент выбрал один из предложенных туров</em></li>
+<li>Подбор тура выполнен <em class="explanation">&ndash; подбор тура успешно закончен, создана заявка на бронирование</em></li>
+<li>Подбор тура отменен</li>
+</ul>
+
+<p>Изменение состояния подбора тура производится с помощью кнопок, расположенных внизу.</p>
+
+<p class="centered-image"> <img src="images/tour_search_buttons.png" alt="Подбор тура: изменение состояния" /></p>
+
+<a name="refusal"></a><h2>Регистрация отказа клиента</h2>
+
+<p>Когда клиент отказывается от услуг нашей фирмы, менеджер должен зафиксировать этот факт в карточке клиента, чтобы изменить
+статус на неактивный (клиенты с неактивным статусом не отображаются на экране CRM) и записать причину отказа для последующего
+анализа в воронке продаж.</p>
+
+<p class="centered-image"> <img src="images/refusal.gif" alt="Регистрация отказа клиента" /></p>
+
+<p>При отказе от забронированного тура менеджер сначала аннулирует заявку, клиенту автоматически присваивается статус “Аннуляция тура”.
+Затем, после завершения процедуры аннуляции и возврата средств, менеджер в карточке клиента нажимает кнопку
+“Аннуляция завершена”, выбирает причину отказа от тура, и клиент переводится в неактивное состояние.</p>
+
+<p class="centered-image"> <img src="images/tour_cancel.gif" alt="Аннуляция тура" /></p>
+
+<a name="transfer"></a><h2>Передача клиента другому менеджеру</h2>
+
+<p>В любой момент времени менеджер может передать своего клиента другому менеджеру, изменив значение поля “Менеджер” в
+карточке клиента. При этом, если у клиента был активный статус, то информация о переданном клиенте появится на экране CRM
+у того менеджера, которому передали клиента, и будет выделена голубым цветом.</p>
+
+<p class="centered-image"> <img src="images/customer_transfer.gif" alt="Передача клиента" /></p>
+<p>&nbsp;</p><p>&nbsp;</p><hr />
+
+<p>Остались вопросы? Напишите нам на <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%3A%20%D0%9A%D0%B0%D1%80%D1%82%D0%BE%D1%87%D0%BA%D0%B0%20%D0%BA%D0%BB%D0%B8%D0%B5%D0%BD%D1%82%D0%B0">e-mail</a></p></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

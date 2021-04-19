@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>TourFX: Агент - программа для турагентства</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="cache-control" content="max-age=0"/>
+      <meta http-equiv="cache-control" content="no-cache"/>
+      <meta http-equiv="expires" content="0"/>
+      <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+      <meta http-equiv="pragma" content="no-cache"/>
+
+    <!-- Le styles -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-bottom: 40px;
+      }
+        .update-header {
+            margin-top: 20px;
+        }
+        .hero-unit {
+            padding: 40px;
+        }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="../">TourFX</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="../price/">Цены</a></li>
+              <li><a href="../agent/doc/">Документация</a></li>
+              <li><a href="#">Техподдержка</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+          <div class="span12">
+              <h2>Техническая поддержка</h2>
+              <p>Уважаемые пользователи!<br/>
+              Техническая поддержка программы <b>TourFX Агент</b> осуществляется по электронной почте <a href="&#109;&#x61;&#x69;l&#x74;o&#58;&#x61;&#x67;e&#110;t&#x40;&#116;&#x6f;&#x75;&#x72;&#102;&#x78;&#46;&#x72;&#x75;">&#97;&#103;&#x65;&#x6e;&#116;&#64;&#116;&#x6f;&#117;&#x72;&#x66;&#120;&#x2e;r&#117;</a> только для пользователей, имеющих лицензии Lite и Pro на программу.<br/>
+              Желательно подробно описать проблему и последовательность действий, которые к ней приводят.
+              Также обратите внимание, в программе имеется встроенный механизм снятия скриншотов экранных форм. Просто
+              нажмите клавишу PrintScreen (или PrtSc) на клавиатуре. Сверху справа появится меню, с помощью которого вы
+              можете сохранить скриншот в файл или сразу отправить его на электронный адрес службы техподдержки.</p>
+              <p><b>Перед обращением в службу техподдержки</b> просьба ознакомиться со следующим списком проблем и их решений:</p>
+              <ul>
+                <li><a href="#sql-connect">Ошибка соединения с базой данных</a></li>
+                <li><a href="#printing">Не работает печать документов в заявке</a></li>
+                <li><a href="#update">Программа не запускается после обновления</a></li>
+                <li><a href="#mssql-transfer">Как перенести базу данных с одного компьютера на другой</a></li>
+              </ul>
+              
+              <a name="sql-connect"></a>
+              <h2>Ошибка соединения с базой данных</h2>
+              <p>Попробуйте выполнить следующие действия:</p>
+              <ul>
+                <li>Проверьте, что компьютер имеет доступ по локальной сети к компьютеру-серверу, на котором установлен Microsoft SQL Server.</li>
+                <li>Отключите брандмауэр Windows на компьютере, где установлен Microsoft SQL Server. Брандмауэр может 
+                    блокировать входящие соединения. Обратите внимание, что даже если вы вручную выключили брандмауэр, 
+                    некоторые программы могут его самостоятельно без вашего участия включить, и программа <b>TourFX Агент</b> 
+                    опять не сможет подключиться к базе данных. Если отключение решает проблему, можно добавить правило, 
+                    разрешающее входящие соединения на порт 1433 (порт Microsoft SQL Server), и включить обратно брандмауэр.</li>
+                <li>Временно отключите антивируc.</li>
+                <li>Если ошибка возникает сразу после установки Microsoft SQL Server, удалите его, а затем установите и настройте его заново, очень внимательно следуя инструкции. 
+                    Неправильное или неточное выполнение любого из шагов установки или настройки SQL-сервера приводят к проблеме 
+                    с подключением программы к базе данных.</li>
+              </ul>
+              
+              
+              <a name="printing"></a>
+              <h2>Не работает печать документов в заявке</h2>
+              <p>Вся печать в программе TourFX Агент осуществляется через обычные документы Word (формат DOCX) и Excel (формат XLS). 
+              Убедитесь, что у вас установлен Microsoft Office версии 2007 и выше или <a href="https://ru.libreoffice.org/">LibreOffice</a> версии 4.1 и выше. 
+              Microsoft Office 2003 не подходит для печати договора без установленного пакета поддержки формата DOCX. 
+              Microsoft Office в Стартовой редакции (иногда предустановлен на новых компьютерах) любой версии не подходит 
+              для использования с программой TourFX Агент. Рекомендуется в таких случаях использовать бесплатный офисный 
+              пакет <a href="https://ru.libreoffice.org/">LibreOffice</a>.</p>
+
+              <a name="update"></a>
+              <h2>Программа не запускается после обновления</h2>
+              <p>На некоторых компьютерах антивирусы и другие защитные программы иногда блокируют процесс установки обновления, и возможна ситуация, когда установка файлов новой версии была произведена не до конца. В таком случае нужно: 
+              <ul>
+                <li>перезагрузить компьютер (программу не запускать после перезагрузки),</li>
+              <li>скачать полный дистрибутив программы с сайта <a href="http://tourfx.ru/">tourfx.ru</a> и установить его в ту же папку, в которую программа была установлена, поверх старых файлов, ничего не удаляя.</li>
+              </ul> 
+              <p>Затем рекомендуется <a href="../agent/doc/update/2.9.10/#disable-auto-update">отключить в настройках</a> автоматическую систему обновлений и устанавливать новые версии из <a href="../agent/doc/update/#reinstall">полного дистрибутива</a>.</p>
+
+              <a name="mssql-transfer"></a>
+              <h2>Как перенести базу данных с одного компьютера на другой</h2>
+              <p>Для однопользовательской версии можно перенести целиком папку TourFX. Все данные хранятся внутри нее.</p>
+              <p>Для многопользовательской версии используйте
+              <a href="/agent/doc/mssql/transfer/">инструкцию по переносу базы Microsoft SQL Server</a>.</p>
+
+              <div style="height: 400px">&nbsp;</div>
+          </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; TourFX 2012-2019</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36667707-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18497197 = new Ya.Metrika({id:18497197,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18497197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  </body>
+</html>
